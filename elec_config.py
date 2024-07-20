@@ -29,7 +29,7 @@ iupacNames = { # Key-value pairs of numbers and their IUPAC nomenclature for ele
     4 : 'quad',
     5 : 'pent',
     6 : 'hex',
-    7 : 'hept',
+    7 : 'sept',
     8 : 'oct',
     9 : 'enn'
 }
