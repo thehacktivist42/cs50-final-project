@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Lilita+One&family=Salsa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Lilita+One&family=Salsa&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 body {
     background-color: #080402;
 }
@@ -23,10 +23,46 @@ hr {
     font-weight: 400;
     font-style: normal;
 }
+#origin {
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
 #element {
     color: white;
     font-size: 27px;
     font-family: "Lilita One", sans-serif;
     font-weight: 250;
     font-style: normal
+}
+#left {
+    width: 35%;
+    float: left;
+    display: inline;
+}
+#right {
+    width: 35%;
+    float: right;
+    display: inline;
+}
+#container {
+    width: 75%;
+    margin: 0 auto;
+}
+#config {
+    font-family: "Oswald", sans-serif;
+    font-size: 30px;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+#stuff {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+}
+#block {
+    font-size: 15px;
 }

@@ -9,7 +9,37 @@
     <p style = "color: white;" class = "container text-center" id = "element">{{element}}</p>
     <p style = "color: white;" class = "container text-center" id = "subtitle">is</p> 
     <p style = "color: white;" class = "container text-center" id = "config">{{elecConfig}}</p>
+    <div class = "container text-center"><img src = "static/elements.png" width = 700px></div><br>
     {% if mass %}
-        {{mass}}, {{density}}, {{meltingPoint}}, {{meltingPoint - 273}}, {{boilingPoint}}, {{boilingPoint - 273}}, {{nameOrigin}}
+        <div class = "container text-center">
+            <div class="card text-bg-{{colour}} mb-4" id = "container">
+                <div class="card-body">
+                <h5 class="card-title">Information about {{elementName}}</h5>
+                <h5 id = "block">{{block}}-block element</h5>
+                <h6 id = "origin"><i>{{nameOrigin}}</i></h6>
+                <div class="card-text" id = "left">
+                    <p id = "stuff"><b>Mass:</b> {{mass}}{% if mass != "Not known" %} u{% endif %}</p>
+                    <p id = "stuff"><b>Boiling Point:</b> {{boilingPoint}}{% if boilingPoint != "Not known" %} K ({{(boilingPoint - 273) | round(2)}}°C){% endif %}</p>
+                    <p id = "stuff"><b>Discovered by:</b> {{discoverers}}</p>
+                </div>
+                <div class="card-text" id = "right">
+                    <p id = "stuff"><b>Density:</b> {{density}}{% if density != "Not known" %} kg/m³{% endif %}</p>
+                    <p id = "stuff"><b>Melting Point:</b> {{meltingPoint}}{% if meltingPoint != "Not known" %} K ({{(meltingPoint - 273) | round(2)}}°C){% endif %}</p>
+                    <p id = "stuff"><b>Discovered in:</b> {{ discoveryYear }}</p>
+                </div><br><br><br><br><br><br>
+                <p id = "stuff">{{description}}</p>
+                </div>
+            </div>
+        </div>
+    {% else %}
+    <div class = "container text-center">
+        <div class="card text-bg-{{colour}} mb-4" id = "container">
+            <div class="card-body">
+            <h5 class="card-title">Information about {{elementName}}</h5>
+            <h6 id = "origin"><i>{{nameOrigin}}</i></h6>
+            <p id = "stuff">{{description}}</p>
+            </div>
+        </div>
+    </div>
     {% endif %}
 {% endblock %}
