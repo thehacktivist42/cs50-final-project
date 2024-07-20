@@ -123,3 +123,5 @@ elements = {
     117: ['Tennessine',    'Ts', [],     []],
     118: ['Oganesson',     'Og', [],     []]
 }
+
+elements1 = {i : elements[i][0] for i in elements}

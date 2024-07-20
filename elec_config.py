@@ -81,9 +81,10 @@ def elemSearch(n): # Searches the elements by atomic number in the elements dict
     global elements
     return elements[n][0] + " (" + elements[n][1] + ")"
 
-n = int(input("Enter the atomic number of the element: "))
-if n <= 118: # For elements present in periodic table, their proper name is used.
-    elem = elemSearch(n)
-else:
-    elem = iupacName(n) # For elements not present in periodic table, their IUPAC name is used.
-print(f"The electronic configuration of the element {elem} having atomic number {n} is:", electronicConfiguration(n), sep = "\n")
+if __name__ == "__main__":
+    n = int(input("Enter the atomic number of the element: "))
+    if n <= 118: # For elements present in periodic table, their proper name is used.
+        elem = elemSearch(n)
+    else:
+        elem = iupacName(n) # For elements not present in periodic table, their IUPAC name is used.
+    print(f"The electronic configuration of the element {elem} having atomic number {n} is:", electronicConfiguration(n), sep = "\n")
