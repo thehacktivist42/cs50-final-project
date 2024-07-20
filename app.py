@@ -48,7 +48,8 @@ def index():
                     color = 'success'
                 case _:
                     color = 'light'
-        return render_template("indexed.html", 
+        return render_template("indexed.html",
+                               atomicNumber = elem, 
                                element = element, 
                                elecConfig = electronicConfiguration(elem), 
                                elementList = elements1, 
