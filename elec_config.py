@@ -8,6 +8,12 @@ from elec_config_data import elements
 def key(dict, elem): # A QoL function for accessing the key of a dictionary element from its value.
     return list(dict.keys())[list(dict.values()).index(elem)]
 
+def superscript(x):  # Another QoL function to return superscripts.
+    normal = "0123456789"
+    super = "⁰¹²³⁴⁵⁶⁷⁸⁹"
+    res = x.maketrans(''.join(normal), ''.join(super)) 
+    return x.translate(res)
+
 orbitals = { # Key-value pairs of orbitals and their azimuthal quantum number values
     0 : 's',
     1 : 'p',
@@ -50,9 +56,9 @@ electrons = { # Key-value pairs of orbitals and their maximum electron capacity
 
 def electronicConfiguration(n): # MAIN FUNCTION
     if n == 24: # Exceptional electronic configuration of Chromium
-        return "1s2 2s2 2p6 3s2 3p6 4s1 3d5"
+        return "1s² 2s² 2p⁶ 3s² 3p⁶ 4s¹ 3d⁵"
     elif n == 29: # Exceptional electronic configuration of Copper
-        return "1s2 2s2 2p6 3d2 3p6 4s1 3d10"
+        return "1s² 2s² 2p⁶ 3d² 3p⁶ 4s¹ 3d¹⁰"
     global subshells, electrons
     at = 0
     li = []
@@ -62,7 +68,7 @@ def electronicConfiguration(n): # MAIN FUNCTION
             break
         sub = electrons[i[1]]
         k = min(n-at, sub) # If subshell is fully filled, adds the max number of electrons, else, adds the number of electrons left
-        li.append(i+str(k))
+        li.append(i+superscript(str(k)))
         at+=k
     return ' '.join(li)
 
