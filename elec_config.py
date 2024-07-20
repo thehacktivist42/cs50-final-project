@@ -87,6 +87,9 @@ def elemSearch(n): # Searches the elements by atomic number in the elements dict
     global elements
     return elements[n][0] + " (" + elements[n][1] + ")"
 
+def elemSymbol(n): # Returns the symbol of the element
+    return elements[n][1]
+
 if __name__ == "__main__":
     n = int(input("Enter the atomic number of the element: "))
     if n <= 118: # For elements present in periodic table, their proper name is used.
