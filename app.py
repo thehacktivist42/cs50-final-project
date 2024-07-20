@@ -1,6 +1,6 @@
 from elec_config import elemSearch, iupacName, electronicConfiguration, elemSymbol
 from elec_config_data import elements1
-from flask import Flask, redirect, render_template, request
+from flask import Flask, render_template, request
 import mendeleev
 
 app = Flask(__name__)
