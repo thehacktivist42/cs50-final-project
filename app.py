@@ -1,7 +1,7 @@
-from elec_config import elemSearch, iupacName, electronicConfiguration, elemSymbol
-from elec_config_data import elements1
+from elec_config import elemSearch, iupacName, electronicConfiguration, elemSymbol # A python program written by me
+from elec_config_data import elements1 # Names and atomic numbers of all elements
 from flask import Flask, render_template, request
-import mendeleev
+import mendeleev # Python library with elemental properties
 
 app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
@@ -10,7 +10,7 @@ def index():
         return render_template("index.html", elementList = elements1)
     else:
         elem = int(request.form.get("element"))
-        if elem >= 119:
+        if elem >= 119: # If element is undiscovered
             element = iupacName(elem)
             m = d = mp = bp = discovery_year = discoverers = False
             elemName = element
@@ -18,7 +18,7 @@ def index():
             description = f"The properties of {elemName} are not known."
             color = 'light'
             block = ''
-        else:
+        else: # If element is among the 118 discovered elements
             element = elemSearch(elem)
             elemSym = elemSymbol(elem)
             elemName = getattr(mendeleev, elemSym).name

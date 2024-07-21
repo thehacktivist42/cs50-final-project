@@ -3,6 +3,8 @@
 ### Copyright © 2022
 ### All rights reserved.
 
+## THE MAIN PYTHON CODE THAT WORKS UNDERNEATH THE HOOD
+
 from elec_config_data import elements
 
 def key(dict, elem): # A QoL function for accessing the key of a dictionary element from its value.
@@ -14,7 +16,7 @@ def superscript(x):  # Another QoL function to return superscripts.
     res = x.maketrans(''.join(normal), ''.join(super)) 
     return x.translate(res)
 
-orbitals = { # Key-value pairs of orbitals and their azimuthal quantum number values
+orbitals = { # Key-value pairs of orbitals and their azimuthal (secondary) quantum number values
     0 : 's',
     1 : 'p',
     2 : 'd',
