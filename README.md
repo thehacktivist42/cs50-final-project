@@ -2,6 +2,8 @@
 
 This is my Final Project submission for the CS50x Course.
 
+## Video URL: https://www.youtube.com/watch?v=NRSNxxiCP_k
+
 ## What does it do?
 The idea is simple: to calculate the electronic configuration and the properties of any element given its atomic number and output it on the screen.
 
